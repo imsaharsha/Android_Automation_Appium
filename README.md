@@ -28,7 +28,7 @@ To install and set up the Android Saucedemo Automation project, follow these ste
 
 1. Clone the repository using Git:
 
-   ```bash
-  git clone  https://github.com/imsaharsha/Android_Automation_Appium.git
+   ```bash git clone  https://github.com/imsaharsha/Android_Automation_Appium.git
+  
    ```
 
