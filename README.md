@@ -94,10 +94,3 @@ Contributions to the Android Saucedemo Automation project are always welcome. If
 
 5. Open a pull request, describing your changes and their purpose.
 
-### License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code as permitted by the license.
-
----
-
-Thank you for using the Android Saucedemo Automation project. If you have any questions or need further assistance, please don't hesitate to reach out to the project maintainers. Happy testing!
