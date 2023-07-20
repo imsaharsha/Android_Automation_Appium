@@ -2,9 +2,11 @@ package saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import SaucelabHelper.Helper;
 import io.appium.java_client.AppiumDriver;
 
-public class CartPage extends driverInitiation {
+public class CartPage extends Helper{
 	private AppiumDriver driver;
 	private By cartIconLocator = By.xpath(
 			"//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.ImageView");

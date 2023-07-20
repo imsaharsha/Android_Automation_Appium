@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SauceDemoTestSuite">
+	<test name="LoginPageTest">
+		<classes>
+			<class name="saucetest.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="ProductsPageTest">
+		<classes>
+			<class name="saucetest.ProductsPageTest" />
+		</classes>
+	</test>
+
+	<test name="CartPageTest">
+
+		<classes>
+			<class name="saucetest.CartPageTest" />
+		</classes>
+	</test>
+
+	<test name="CheckoutPageTest">
+		<classes>
+			<class name="saucetest.CheckoutPageTest" />
+		</classes>
+	</test>
+
+	<test name="LogoutPageTest">
+		<classes>
+			<class name="saucetest.LogoutPageTest" />
+		</classes>
+	</test>
+</suite>

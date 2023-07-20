@@ -6,7 +6,7 @@
       <class name="saucetest.BaseTest">
         <methods>
           <include name="setup"/>
-          <include name="testLoginWithValidCredentials"/>
+          <include name="testCase"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- saucetest.BaseTest -->

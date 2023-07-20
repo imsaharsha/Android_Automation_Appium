@@ -1,16 +1,19 @@
 package saucedemo;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 
+import SaucelabHelper.Helper;
 import io.appium.java_client.AppiumDriver;
 
-public class ProductsPage extends driverInitiation {
+public class ProductsPage extends Helper{
 	private static final String itemName = "Sauce Labs Backpack";
 	private AppiumDriver driver;
 	private Helper helper;
 	private By addToCartPath = By.xpath("//android.widget.TextView[@text='" + itemName + "']");
 	private By buttonPath = By.xpath("//android.widget.TextView[@text='ADD TO CART']");
+	
 	
 
 	public ProductsPage(AppiumDriver driver) {

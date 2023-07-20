@@ -1,4 +1,4 @@
-package saucedemo;
+package SaucelabHelper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumDriver;
+import saucedemo.driverInitiation;
 
 public class Helper extends driverInitiation{
 	private AppiumDriver driver;
@@ -22,6 +23,7 @@ public class Helper extends driverInitiation{
 	}
 
 	 public void scrollDown() {
+		 
 
 		  Dimension screenSize = driver.manage().window().getSize();
 		  int left = (int) (screenSize.getWidth() * 0.25); // 25% from the left side
@@ -31,8 +33,26 @@ public class Helper extends driverInitiation{
 
 		  boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture",
 		    ImmutableMap.of("left", left, "top", top, "width", width, "height", height, "direction", "down",
-		      "percent", 3.0));
+		      "percent", 2.0));
 		 }
+	 public void clickElement(WebElement e)
+		{
+			e.click();
+			System.out.println("Element " + e + " clicked !");
+		}
+		
+		public void sendKeysToElement(By e,String text)
+		{
+			element(e).sendKeys(text);
+			System.out.println("send value:"+text);
+		}
+		
+		public WebElement element(By path)
+		{
+			System.out.println("dirver: "+getDriver());
+			return (getDriver().findElement(path));
+		}
+
 
 	
 //	public void ClickElement(WebElement e)

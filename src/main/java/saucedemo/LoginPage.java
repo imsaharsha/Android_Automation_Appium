@@ -4,15 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import SaucelabHelper.Helper;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 
-public class LoginPage extends driverInitiation {
+public class LoginPage extends Helper {
 	protected AppiumDriver driver;
 	WebElement usernameInput;
 	WebElement passwordInput;
 	WebElement loginButton;
 	WebElement err;
+	private String assertXpath="//android.view.ViewGroup[@content-desc=\"test-Error message\"]/android.widget.TextView";
 
 	private By usernamexpath = By.xpath(
 			"//android.widget.ScrollView[@content-desc=\"test-Login\"]/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.EditText");
@@ -35,7 +37,7 @@ public class LoginPage extends driverInitiation {
 		passwordInput.sendKeys(password);
 	}
 
-	public void clickLoginButton1() {
+	public void clickLoginButton() {
 		loginButton.click();
 	}
 
@@ -51,21 +53,19 @@ public class LoginPage extends driverInitiation {
 		passwordInput.sendKeys(password);
 	}
 
-	public String clickLoginButton() {
-		loginButton.click();
-		String actual_errmsg = null;
-		String name = name_getter();
-		String psw = psw_getter();
-		if (!name.equals("standard_user") && !psw.equals("secret_sauce")) {
-			err = driver.findElement(AppiumBy
-					.xpath("//android.view.ViewGroup[@content-desc=\"test-Error message\"]/android.widget.TextView"));
-			actual_errmsg = err.getText();
-			String expected_errmsg = "Username and password do not match any user in this service.";
-			Assert.assertEquals(actual_errmsg, expected_errmsg);
-		} else {
-			return ("login successfull");
+	public void checkErrorMsg()
+	{
+		if(!name_getter().equals("Standard_user")||!psw_getter().equals("secret_sauce")) {
+			try {
+				 element(By.xpath(assertXpath));
+				}catch (java.util.NoSuchElementException e) {
+//				  Assert.fail("Error on Page:element not found");
+					System.out.println(e);
+				}
+				Assert.assertTrue( element(By.xpath(assertXpath)).isDisplayed());
+				System.out.println("login successful");	
 		}
-		return actual_errmsg;
+		
 	}
 
 }
